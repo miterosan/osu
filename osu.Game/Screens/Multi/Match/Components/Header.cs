@@ -52,7 +52,7 @@ namespace osu.Game.Screens.Multi.Match.Components
                                 Font = OsuFont.GetFont(size: 30),
                                 Current = { BindTarget = RoomName }
                             },
-                            hostText = new LinkFlowContainer(s => s.Font = OsuFont.GetFont(size: 20))
+                            hostText = new LinkFlowContainer(s => s.Font = OsuFont.GetFont(size: 20, weight: FontWeight.SemiBold))
                             {
                                 AutoSizeAxes = Axes.Both,
                                 Direction = FillDirection.Horizontal,
@@ -71,7 +71,7 @@ namespace osu.Game.Screens.Multi.Match.Components
                 if (host.NewValue != null)
                 {
                     hostText.AddText("hosted by ");
-                    hostText.AddUserLink(host.NewValue, s => s.Font = s.Font.With(weight: FontWeight.SemiBold));
+                    hostText.AddUserLink(host.NewValue);
                 }
             }, true);
         }
